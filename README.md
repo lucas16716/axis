@@ -55,8 +55,6 @@ CSS is compiled and minified automatically. JavaScript is minified manually befo
 | Sass (SCSS) | Modular architecture with design tokens |
 | JavaScript | Free — no structure imposed |
 
-&nbsp;
-
 ## Project Structure
 
 ```
@@ -178,8 +176,6 @@ Available modifiers: `flex-col`, `flex-wrap`, `justify-start`, `justify-center`,
 
 > Responsive variants `.grid-{n}-{bp}` override only `grid-template-columns`. The base class `.grid-{n}` must always be present on the element.
 
-&nbsp;
-
 ## Components
 
 ### Button
@@ -229,8 +225,6 @@ Alignment modifiers: `is-start`, `is-center`, `is-end`.
 
 The badge inherits color via `currentColor` — apply color through the parent element, directly via `style`, or through a color class from your project.
 
-&nbsp;
-
 ## Mixins
 
 Use mixins directly in your section or component partials:
@@ -255,8 +249,6 @@ Use mixins directly in your section or component partials:
   // styles for md and below
 }
 ```
-
-&nbsp;
 
 ## Getting Started
 
@@ -298,8 +290,6 @@ By default, `index.html` points to the development CSS. For production, swap the
 
 Add sections in `src/sass/sections/` and register them in `sections/_index.scss`. Define semantic tokens in the partials where they are consumed and use AXIS layout classes and components as the foundation.
 
-&nbsp;
-
 ## Starting a New Project with AXIS
 
 When cloning AXIS for a new project, the recommended workflow is:
@@ -310,8 +300,6 @@ When cloning AXIS for a new project, the recommended workflow is:
 4. **Style header and footer** — `sections/_header.scss` and `sections/_footer.scss` are empty and ready for the project
 5. **Create your sections** — add new partials in `sections/` and register them in `sections/_index.scss`
 
-&nbsp;
-
 ## Production Optimization
 
 AXIS automatically generates minified CSS via Live Sass Compiler. For projects where final bundle size is critical, consider using **PurgeCSS** to remove unused CSS classes from the production build.
@@ -319,8 +307,6 @@ AXIS automatically generates minified CSS via Live Sass Compiler. For projects w
 → [purgecss.com](https://purgecss.com)
 
 JavaScript (`src/js/script.js`) can be minified manually before deploy. Recommended tools: [Terser](https://terser.org) or [Toptal JS Minifier](https://www.toptal.com/developers/javascript-minifier).
-
-&nbsp;
 
 ## Contributing
 

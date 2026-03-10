@@ -55,8 +55,6 @@ O CSS é compilado e minificado automaticamente. O JS é minificado manualmente 
 | Sass (SCSS) | Arquitetura modular com design tokens |
 | JavaScript | Livre — sem estrutura imposta |
 
-&nbsp;
-
 ## Estrutura do projeto
 
 ```
@@ -178,8 +176,6 @@ Modificadores disponíveis: `flex-col`, `flex-wrap`, `justify-start`, `justify-c
 
 > As variantes responsivas `.grid-{n}-{bp}` sobrescrevem apenas `grid-template-columns`. A classe base `.grid-{n}` deve estar sempre presente no elemento.
 
-&nbsp;
-
 ## Componentes
 
 ### Button
@@ -229,8 +225,6 @@ Modificadores de alinhamento: `is-start`, `is-center`, `is-end`.
 
 O badge herda cor via `currentColor` — aplique a cor pelo elemento pai ou diretamente via `style` ou classe de cor do seu projeto.
 
-&nbsp;
-
 ## Mixins
 
 Use os mixins diretamente nas suas partials de seção ou componente:
@@ -255,8 +249,6 @@ Use os mixins diretamente nas suas partials de seção ou componente:
   // estilos para md e abaixo
 }
 ```
-
-&nbsp;
 
 ## Como usar o AXIS?
 
@@ -298,8 +290,6 @@ Por padrão o `index.html` aponta para o CSS de desenvolvimento. Para produção
 
 Adicione suas seções em `src/sass/sections/` e registre-as no `sections/_index.scss`. Defina seus tokens semânticos nas partials onde forem usados e utilize as classes de layout e componentes do AXIS como base.
 
-&nbsp;
-
 ## Começando um novo projeto com o AXIS
 
 Ao clonar o AXIS para um novo projeto, o fluxo recomendado é:
@@ -310,8 +300,6 @@ Ao clonar o AXIS para um novo projeto, o fluxo recomendado é:
 4. **Estilize header e footer** — as partials `sections/_header.scss` e `sections/_footer.scss` estão vazias e prontas para o seu projeto
 5. **Crie suas seções** — adicione novas partials em `sections/` e registre-as no `sections/_index.scss`
 
-&nbsp;
-
 ## Otimização para produção
 
 O AXIS gera o CSS minificado automaticamente via Live Sass Compiler. Para projetos onde o tamanho final do bundle é crítico, considere usar o **PurgeCSS** para remover classes CSS não utilizadas do build de produção.
@@ -319,8 +307,6 @@ O AXIS gera o CSS minificado automaticamente via Live Sass Compiler. Para projet
 → [purgecss.com](https://purgecss.com)
 
 O JavaScript (`src/js/script.js`) pode ser minificado manualmente antes do deploy. Ferramentas recomendadas: [Terser](https://terser.org) ou [Toptal JS Minifier](https://www.toptal.com/developers/javascript-minifier).
-
-&nbsp;
 
 ## Contribuindo
 
