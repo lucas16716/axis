@@ -1,13 +1,18 @@
 <div align="center">
 
+<img src="assets/favicon/favicon.svg" width="130" height="130" alt="AXIS symbol"/>
+
+&nbsp;
+
 # AXIS
 
 **A modern Sass architecture and starter foundation for scalable, maintainable web projects.**
 
 *Structure your frontend. Focus on building, not configuring.*
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/lucas16716/axis)&nbsp;&nbsp;
-[![License: MIT](https://img.shields.io/badge/License-MIT-white.svg)](./LICENSE)&nbsp;&nbsp;
+[![License](https://img.shields.io/badge/license-MIT-e8e4de?style=flat-square&labelColor=ef4444&color=1c1b2e)](https://github.com/lucas16716/axis/blob/main/LICENSE)&nbsp;
+[![Version](https://img.shields.io/badge/version-1.0.0-e8e4de?style=flat-square&labelColor=10b981&color=1c1b2e)](https://github.com/lucas16716/axis/releases)&nbsp;
+[![Template](https://img.shields.io/badge/template-ready-e8e4de?style=flat-square&labelColor=3437e6&color=1c1b2e)](https://github.com/lucas16716/axis/generate)&nbsp;
 ![GitHub Repo stars](https://img.shields.io/github/stars/lucas16716/axis?style=social)
 
 🇺🇸 [Read in English](./README.md)
