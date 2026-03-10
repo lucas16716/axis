@@ -2,13 +2,11 @@
 
 <img src="assets/favicon/favicon.svg" width="130" height="130" alt="AXIS symbol"/>
 
-&nbsp;
-
 # AXIS
 
-**A modern Sass architecture and starter foundation for scalable, maintainable web projects.**
+**A modern Sass architecture and starter foundation for scalable, maintainable web projects**
 
-*Structure your frontend. Focus on building, not configuring.*
+*Structure your frontend. Focus on building, not configuring*
 
 [![License](https://img.shields.io/badge/license-MIT-e8e4de?style=flat-square&labelColor=ef4444&color=1c1b2e)](https://github.com/lucas16716/axis/blob/main/LICENSE)&nbsp;
 [![Version](https://img.shields.io/badge/version-1.0.0-e8e4de?style=flat-square&labelColor=10b981&color=1c1b2e)](https://github.com/lucas16716/axis/releases)&nbsp;
