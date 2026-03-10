@@ -1,0 +1,66 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mix;
+
+// ===================================================
+// AXIS — UTILITY CLASSES
+// Purpose: Minimal, structural helper utilities
+// ===================================================
+
+// ---------------------------------------------------
+// Accessibility — Visible only to screen readers
+// ---------------------------------------------------
+.sr-only { @include mix.visually-hidden; } 
+
+// ---------------------------------------------------
+// Display
+// ---------------------------------------------------
+.block   { display: block; }
+.hidden  { display: none !important; }
+
+// ---------------------------------------------------
+// Responsive Visibility (Desktop-first)
+// ---------------------------------------------------
+// Naming:
+// .hide-{breakpoint}-down  → max-width
+// .hide-{breakpoint}-up    → min-width
+// ---------------------------------------------------
+@each $bp, $value in token.$breakpoints {
+
+  // Hide at breakpoint and below
+  .hide-#{$bp}-down {
+    @include mix.respond($bp) {
+      display: none !important;
+    }
+  }
+
+  // Hide at breakpoint and above
+  .hide-#{$bp}-up {
+    @include mix.respond-up($bp) {
+      display: none !important;
+    }
+  }
+}
+
+// ---------------------------------------------------
+// Position
+// ---------------------------------------------------
+.relative { position: relative; }
+.absolute { position: absolute; }
+.sticky   { position: sticky; }
+
+// ---------------------------------------------------
+// Text Interaction
+// ---------------------------------------------------
+.no-select { user-select: none; }
+
+// ---------------------------------------------------
+// Text Alignment
+// ---------------------------------------------------
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+// ---------------------------------------------------
+// Text Truncation
+// ---------------------------------------------------
+.truncate    { @include mix.truncate(1); }
+.truncate-2  { @include mix.truncate(2); }

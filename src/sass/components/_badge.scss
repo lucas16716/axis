@@ -1,0 +1,40 @@
+@use "../abstracts/tokens" as token;
+
+// ===================================================
+// AXIS — BADGE (Structural Component)
+// Neutral, token-driven, no color assumptions
+// ===================================================
+
+// ---------------------------------------------------
+// Semantic Badge Tokens
+// ---------------------------------------------------
+$font-size-badge:   token.$font-13; // 0.8rem  (~12.8px) - Major Third -1
+$line-height-badge: token.$lh-none;
+
+$border-rd-badge:   token.$radius-full;
+
+$padding-badge:     token.$space-ui-6 token.$space-ui-12;
+$gap-badge:         token.$space-ui-2;
+
+// ---------------------------------------------------
+// Badge Default
+// ---------------------------------------------------
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap-badge;
+
+  padding: $padding-badge;
+
+  background-color: transparent;
+  border: 1px solid currentColor;
+  border-radius: $border-rd-badge;
+
+  font-size: $font-size-badge;
+  line-height: $line-height-badge;
+  
+  white-space: nowrap;
+  user-select: none;
+  vertical-align: middle;
+}

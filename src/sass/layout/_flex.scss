@@ -1,0 +1,42 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mix;
+
+// ===================================================
+// AXIS — FLEX SYSTEM (Structural Layout)
+// Purpose: Provide flexible alignment and direction utilities
+// ===================================================
+// Naming:
+// .flex
+// .flex flex-col
+// .flex flex-wrap
+// .flex justify-{value}
+// .flex items-{value}
+// ===================================================
+
+// ---------------------------------------------------
+// Base Flex Container
+// ---------------------------------------------------
+.flex { @include mix.flex($gap: token.$gutter);
+
+  // -------------------------------------------------
+  // Direction & Wrapping
+  // -------------------------------------------------
+  &.flex-col  { flex-direction: column; }
+  &.flex-wrap { flex-wrap: wrap; }
+
+  // -------------------------------------------------
+  // Justify (Main)
+  // -------------------------------------------------
+  &.justify-start  { justify-content: flex-start; } 
+  &.justify-between { justify-content: space-between; }
+  &.justify-center  { justify-content: center; }
+  &.justify-end     { justify-content: flex-end; }
+
+  // -------------------------------------------------
+  // Align (Cross)
+  // -------------------------------------------------
+  &.items-stretch  { align-items: stretch; } 
+  &.items-center { align-items: center; }
+  &.items-start  { align-items: flex-start; }
+  &.items-end    { align-items: flex-end; } 
+}

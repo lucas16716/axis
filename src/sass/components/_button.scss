@@ -1,0 +1,71 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mix;
+
+// ===================================================
+// AXIS — BUTTON (Structural Component)
+// Neutral, scalable, token-driven
+// ===================================================
+
+// ---------------------------------------------------
+// Semantic Button Tokens
+// ---------------------------------------------------
+$gap-btn:         token.$space-ui-2;
+$line-height-btn: token.$lh-none;
+$transition-btn:  token.$duration-200 token.$ease-standard;
+
+$op-dsbld-btn:    token.$opacity-60;
+$rd-full-round:   token.$radius-full;
+
+$padding-btn-sm:  token.$space-ui-8  token.$space-ui-16;
+$padding-btn-md:  token.$space-ui-10 token.$space-ui-20;
+$padding-btn-lg:  token.$space-ui-12 token.$space-ui-24;
+$padding-btn-xl:  token.$space-ui-16 token.$space-ui-32;
+
+// ---------------------------------------------------
+// Button Default
+// ---------------------------------------------------
+.button {
+  @include mix.flex($justify: center, $align: center, $gap: $gap-btn);
+
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid currentColor;
+  
+  line-height: $line-height-btn;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+
+  transition:
+    background-color $transition-btn,
+    color $transition-btn,
+    border-color $transition-btn,
+    box-shadow $transition-btn,
+    transform $transition-btn;
+
+  // ---------------------------------------------------
+  // Button Disabled
+  // ---------------------------------------------------
+  &:disabled { cursor: not-allowed; opacity: $op-dsbld-btn; }
+
+  // ---------------------------------------------------
+  // Sizes Modifiers (required)
+  // ---------------------------------------------------
+  &.size-sm  { padding: $padding-btn-sm }
+  &.size-md  { padding: $padding-btn-md }
+  &.size-lg  { padding: $padding-btn-lg }
+  &.size-xl  { padding: $padding-btn-xl }
+
+  // ---------------------------------------------------
+  // Shapes Modifiers 
+  // ---------------------------------------------------
+  &.shape-square { aspect-ratio: 1 / 1; }
+  &.shape-circle { aspect-ratio: 1 / 1; border-radius: $rd-full-round; }
+
+  // ---------------------------------------------------
+  // Variant Modifiers 
+  // ---------------------------------------------------
+  &.is-pill { border-radius: $rd-full-round; }
+  &.is-ghost { text-decoration: underline; border: none; }
+}

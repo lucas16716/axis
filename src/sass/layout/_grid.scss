@@ -1,0 +1,58 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mix;
+
+// ===================================================
+// AXIS — GRID SYSTEM (Structural Layout)
+// Purpose: Provide flexible and responsive grid utilities
+// ===================================================
+// Naming:
+// .grid-{cols}
+// .grid-{cols}-{breakpoint}
+// .col-span-{n}
+// .col-span-{n}-{breakpoint}
+// ===================================================
+
+// ---------------------------------------------------
+// Auto Grid (Content-based)
+// ---------------------------------------------------
+.grid-auto {
+  @include mix.grid-auto($min: 280px);
+}
+
+// ---------------------------------------------------
+// Fixed Columns (1–12): 
+// ---------------------------------------------------
+@for $i from 1 through 12 {
+
+  .grid-#{$i} {
+    @include mix.grid($cols: $i);
+  }
+
+  .col-span-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+// ---------------------------------------------------
+// Responsive Variants
+// Note: responsive variants only override grid-template-columns.
+// The base .grid-{n} class must be present on the element.
+// Ex: <div class="grid-3 grid-1-md"> ← correct usage
+// ---------------------------------------------------
+@each $bp-name, $bp-value in token.$breakpoints {
+  @include mix.respond($bp-name) {
+
+    @for $i from 1 through 12 {
+
+      // Defines container columns
+      .grid-#{$i}-#{$bp-name} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+
+      // Defines how many columns the item occupies
+      .col-span-#{$i}-#{$bp-name} {
+        grid-column: span $i;
+      }
+    }
+  }
+}

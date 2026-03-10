@@ -1,0 +1,14 @@
+// ===================================================
+// AXIS — RADIUS (Primitive Tokens)
+// Purpose: Define border curvature scale across the system
+// ===================================================
+
+// ---------------------------------------------------
+// Radius Scale
+// ---------------------------------------------------
+$radius-xs:   0.25rem;  // 4px
+$radius-sm:   0.375rem; // 6px
+$radius-md:   0.5rem;   // 8px
+$radius-lg:   0.75rem;  // 12px
+$radius-xl:   1rem;     // 16px
+$radius-full: 9999px;   // Fully rounded (pill / circle)

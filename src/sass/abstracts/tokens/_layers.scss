@@ -1,0 +1,17 @@
+// ===================================================
+// AXIS — LAYERS (Primitive Tokens)
+// Purpose: Define stacking hierarchy across the system
+// ===================================================
+
+// ---------------------------------------------------
+// Z-Index Scale
+// ---------------------------------------------------
+$z-layers: (
+  back:     -1,   // Background elements
+  base:     0,    // Default stacking context
+  header:   100,  // Fixed headers
+  dropdown: 200,  // Dropdowns & popovers
+  overlay:  900,  // Backdrops
+  modal:    1000, // Modal dialogs
+  tooltip:  1100  // Topmost UI layer
+);

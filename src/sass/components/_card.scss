@@ -1,0 +1,60 @@
+@use "../abstracts/tokens" as token;
+@use "../abstracts/mixins" as mix;
+
+// ===================================================
+// AXIS — CARD (Structural Component)
+// Neutral container, layout-driven
+// ===================================================
+
+// ---------------------------------------------------
+// Semantic Card Token
+// ---------------------------------------------------
+$transition-card:  token.$duration-200 token.$ease-standard;
+
+$shadow-card-hover: token.$shadow-md;
+$shadow-card-active: token.$shadow-sm;
+
+$gap-content-card: token.$gutter;
+$pad-content-card: token.$space-ui-24;
+
+// ---------------------------------------------------
+// Card Default
+// ---------------------------------------------------
+.card { 
+  @include mix.flex($direction: column);
+  width: 100%;            
+  border: 1px solid currentColor;
+
+  transition:
+    border-color $transition-card,
+    box-shadow $transition-card,
+    transform $transition-card;
+  
+  // ---------------------------------------------------
+  // Interactive State
+  // ---------------------------------------------------
+  &.is-interactive { 
+    cursor: pointer;
+    
+    @media (hover: hover) {
+      &:hover { transform: translateY(-3px); box-shadow: $shadow-card-hover; } }
+    
+    &:focus-visible, &:focus-within { transform: translateY(-3px); box-shadow: $shadow-card-hover; }
+    &:active { transform: translateY(-1px); box-shadow: $shadow-card-active; }
+  }
+
+  // ---------------------------------------------------
+  // Internal Structure
+  // ---------------------------------------------------
+  .card__content {
+    @include mix.flex($direction: column, $gap: $gap-content-card);
+    padding: $pad-content-card;
+
+    // ---------------------------------------------------
+    // Content Alignment Modifiers
+    // ---------------------------------------------------
+    &.is-center { align-items: center; text-align: center; }
+    &.is-start  { align-items: flex-start; text-align: start; }
+    &.is-end    { align-items: flex-end; text-align: end; }
+  }
+}

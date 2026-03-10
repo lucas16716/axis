@@ -1,0 +1,27 @@
+@use "../abstracts/mixins" as mix;
+
+// ===================================================
+// AXIS — RESET
+// Low-level structural normalization
+// ===================================================
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+* {
+  margin: 0;
+  padding: 0;
+
+  // Accessibility: Reliable focus indicator for keyboard navigation
+  &:focus-visible { @include mix.focus-ring(); }
+  &:focus:not(:focus-visible) { outline: none; } 
+}
+
+html { text-size-adjust: 100%; }
+html:focus-within { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+}

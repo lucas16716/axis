@@ -1,0 +1,119 @@
+@use "../tokens" as token;
+@use "../functions" as fn;
+@use "sass:map";
+
+// ===================================================
+// AXIS — CORE MIXINS
+// Purpose: Structural abstractions and controlled helpers
+// ===================================================
+
+// ---------------------------------------------------
+// Layout — Container
+// ---------------------------------------------------
+@mixin container( $max-width: map.get(token.$container-sizes, xl) ) {
+  width: 100%;
+  max-width: $max-width;
+  padding-inline: token.$gutter;
+  margin-inline: auto;
+}
+
+// ---------------------------------------------------
+// Layout — Position Absolute Center
+// ---------------------------------------------------
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// ---------------------------------------------------
+// Layout — Flex
+// ---------------------------------------------------
+@mixin flex( $direction: null, $justify: null, $align: null, $gap: null ) {
+  display: flex;
+
+  @if $direction { flex-direction: $direction; }
+  @if $justify { justify-content: $justify; }
+  @if $align { align-items: $align; }
+  @if $gap { gap: $gap; }
+}
+
+// ---------------------------------------------------
+// Layout — Grid (Fixed Columns)
+// ---------------------------------------------------
+@mixin grid( $cols: 1, $gap: token.$gutter ) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+}
+
+// ---------------------------------------------------
+// Layout — Grid Auto (Responsive)
+// ---------------------------------------------------
+@mixin grid-auto( $min: 280px, $gap: token.$gutter ) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, $min), 1fr));
+  gap: $gap;
+}
+
+// ---------------------------------------------------
+// Responsive Utilities — Desktop-first System
+// ---------------------------------------------------
+// Primary flow: respond() → max-width
+// Progressive enhancement: respond-up() → min-width
+// ---------------------------------------------------
+@mixin respond($breakpoint) {
+  $value: fn.bp($breakpoint);
+  @media (max-width: ($value - 0.02px)) {
+    @content;
+  }
+}
+
+@mixin respond-up($breakpoint) {
+  @media (min-width: fn.bp($breakpoint)) {
+    @content;
+  }
+}
+
+// ---------------------------------------------------
+// Utilities — Visually Hidden (Accessibility)
+// ---------------------------------------------------
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+// ---------------------------------------------------
+// Utilities — Focus Ring
+// Ex: @include focus-ring()                  → accent
+//     @include focus-ring(token.$red-500)    → error
+//     @include focus-ring(currentColor, 4px) → larger offset
+// ---------------------------------------------------
+@mixin focus-ring($color: token.$blue-500, $offset: 2px) {
+  outline: 2px solid $color;
+  outline-offset: $offset;
+}
+
+// ---------------------------------------------------
+// Utilities — Text Truncation
+// ---------------------------------------------------
+@mixin truncate($lines: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if $lines == 1 {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+  }
+}

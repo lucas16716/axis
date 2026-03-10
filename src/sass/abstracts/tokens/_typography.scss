@@ -1,0 +1,58 @@
+// ===================================================
+// AXIS — TYPOGRAPHY (Primitive Tokens)
+// Purpose: Define typographic scale and rhythm
+// ===================================================
+
+// ---------------------------------------------------
+// Font Size Scale
+// Modular Proportion: Major Third (1.25) + Traditional UI
+// ---------------------------------------------------
+$font-10: 0.64rem;    // ~10.24px (Major Third -2)
+$font-12: 0.75rem;    // 12px     (Manual UI)
+$font-13: 0.8rem;     // ~12.8px  (Major Third -1)
+$font-14: 0.875rem;   // 14px     (Manual UI)
+$font-16: 1rem;       // 16px     (Base & Major Third 0)
+$font-18: 1.125rem;   // 18px     (Manual UI)
+$font-20: 1.25rem;    // 20px     (Major Third 1)
+$font-24: 1.5rem;     // 24px     (Manual UI)
+$font-25: 1.5625rem;  // 25px     (Major Third 2)
+$font-31: 1.953rem;   // ~31.25px (Major Third 3)
+$font-32: 2rem;       // 32px     (Manual UI)
+$font-39: 2.441rem;   // ~39.06px (Major Third 4)
+$font-40: 2.5rem;     // 40px     (Manual UI)
+$font-48: 3rem;       // 48px     (Manual UI)
+$font-49: 3.051rem;   // ~48.83px (Major Third 5)
+$font-61: 3.815rem;   // ~61.04px (Major Third 6)
+$font-64: 4rem;       // 64px     (Manual UI)
+
+// ---------------------------------------------------
+// Font Weight Scale
+// ---------------------------------------------------
+$weight-100: 100;  // Thin 
+$weight-200: 200;  // Extra Light
+$weight-300: 300;  // Light
+$weight-400: 400;  // Regular
+$weight-500: 500;  // Medium
+$weight-600: 600;  // Semi bold
+$weight-700: 700;  // Bold
+$weight-800: 800;  // Extra Bold
+$weight-900: 900;  // Black
+
+// ---------------------------------------------------
+// Line Height Scale
+// ---------------------------------------------------
+$lh-none:    1;
+$lh-tight:   1.25;
+$lh-normal:  1.5;
+$lh-relaxed: 1.7;
+
+// ---------------------------------------------------
+// Letter Spacing Scale
+// ---------------------------------------------------
+$tracking-tight: -0.02em;
+$tracking-normal: 0;
+$tracking-wide: 0.04em;
+
+// ---------------------------------------------------
+// Semantic Tokens in base/_typography.scss
+// ---------------------------------------------------

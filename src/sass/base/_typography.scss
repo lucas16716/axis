@@ -1,0 +1,54 @@
+@use "../abstracts/tokens" as token;
+
+// ===================================================
+// AXIS — TYPOGRAPHY BASE
+// ===================================================
+
+// ---------------------------------------------------
+// Semantic Tokens
+// ---------------------------------------------------
+$font-family-base: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+$font-size-base:   token.$font-16;    // Base - Major Third 0
+$font-weight-base: token.$weight-400; // Regular
+$line-height-base: token.$lh-normal;  // 1.5
+
+$font-size-h1: token.$font-61; // 3.815rem  (~61px) - Major Third 6
+$font-size-h2: token.$font-49; // 3.051rem  (~48.8px) - Major Third 5
+$font-size-h3: token.$font-39; // 2.441rem  (~39px) - Major Third 4
+$font-size-h4: token.$font-31; // 1.953rem  (~31.2px) - Major Third 3
+$font-size-h5: token.$font-25; // 1.5625rem (25px) - Major Third 2
+$font-size-h6: token.$font-20; // 1.25rem   (20px) - Major Third 1
+$font-weight-heading: token.$weight-700;     // Bold
+$line-height-heading: token.$lh-none;        // 1
+$letter-spc-heading:  token.$tracking-tight; // -0.02em
+
+// ---------------------------------------------------
+// Default Typography
+// ---------------------------------------------------
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size:   $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+}
+
+// ---------------------------------------------------
+// Headings
+// ---------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+  font-weight:    $font-weight-heading;
+  line-height:    $line-height-heading;
+  letter-spacing: $letter-spc-heading;
+}
+
+h1 { font-size: $font-size-h1 }
+h2 { font-size: $font-size-h2 }
+h3 { font-size: $font-size-h3 }
+h4 { font-size: $font-size-h4 }
+h5 { font-size: $font-size-h5 }
+h6 { font-size: $font-size-h6 }

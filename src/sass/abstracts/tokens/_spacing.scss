@@ -1,0 +1,52 @@
+// ===================================================
+// AXIS — SPACING (Primitive Tokens)
+// Purpose: Define layout and interface spacing scale
+// ===================================================
+
+// ---------------------------------------------------
+// Macro Scale — Layout (8pt Grid System)
+// ---------------------------------------------------
+$space-0:   0;      
+$space-8:   0.5rem;  // 8px
+$space-16:  1rem;    // 16px
+$space-24:  1.5rem;  // 24px
+$space-32:  2rem;    // 32px
+$space-40:  2.5rem;  // 40px
+$space-48:  3rem;    // 48px
+$space-64:  4rem;    // 64px
+$space-80:  5rem;    // 80px
+$space-96:  6rem;    // 96px
+$space-128: 8rem;    // 128px
+
+// ---------------------------------------------------
+// Micro Scale — UI Controls
+// ---------------------------------------------------
+$space-ui-2:  0.125rem;  // 2px
+$space-ui-4:  0.25rem;   // 4px
+$space-ui-6:  0.375rem;  // 6px
+$space-ui-8:  0.5rem;    // 8px
+$space-ui-10: 0.625rem;  // 10px
+$space-ui-12: 0.75rem;   // 12px
+$space-ui-14: 0.875rem;  // 14px
+$space-ui-16: 1rem;      // 16px
+$space-ui-20: 1.25rem;   // 20px
+$space-ui-24: 1.5rem;    // 24px
+$space-ui-32: 2rem;      // 32px
+$space-ui-40: 2.5rem;    // 40px
+
+// ---------------------------------------------------
+// Layout Sizes
+// ---------------------------------------------------
+$container-sizes: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1280px
+);
+
+// ---------------------------------------------------
+// Semantic Layout Tokens
+// ---------------------------------------------------
+$gutter:      $space-24;  // Column spacing
+$section-pad: $space-64;  // Vertical spacing between sections

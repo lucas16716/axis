@@ -1,0 +1,21 @@
+// ===================================================
+// AXIS — MOTION (Primitive Tokens)
+// Purpose: Define temporal rhythm across the system
+// ===================================================
+
+// ---------------------------------------------------
+// Duration Scale
+// ---------------------------------------------------
+$duration-100: 0.1s;  // Instant feedback (click, tap)
+$duration-200: 0.2s;  // Hover interactions
+$duration-300: 0.3s;  // Small reveals, dropdowns
+$duration-400: 0.4s;  // Expandable sections, drawers
+$duration-500: 0.5s;  // Larger UI transitions (modals)
+
+// ---------------------------------------------------
+// Easing Curves
+// ---------------------------------------------------
+$ease-standard: cubic-bezier(0.4, 0, 0.2, 1);       // Default UI motion 
+$ease-in:       cubic-bezier(0.4, 0, 1, 1);         // Exit transitions 
+$ease-out:      cubic-bezier(0, 0, 0.2, 1);         // Enter transitions — elements appearing
+$ease-back:     cubic-bezier(0.34, 1.56, 0.64, 1);  // Playful micro-interactions
