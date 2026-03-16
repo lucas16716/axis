@@ -304,6 +304,9 @@ ul, ol {
 .flex.items-end {
   align-items: flex-end;
 }
+.flex.items-baseline {
+  align-items: baseline;
+}
 
 .grid-auto {
   display: grid;
