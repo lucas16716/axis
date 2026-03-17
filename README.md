@@ -2,7 +2,7 @@
 
 <img src="assets/favicon/favicon.svg" width="130" height="130" alt="AXIS symbol"/>
 
-# AXIS
+# A X I S
 
 **A modern Sass architecture and starter foundation for scalable, maintainable web projects**
 
