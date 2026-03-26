@@ -52,10 +52,10 @@ $padding-btn-xl:  token.$space-ui-16 token.$space-ui-32;
   // ---------------------------------------------------
   // Sizes Modifiers (required)
   // ---------------------------------------------------
-  &.size-sm { padding: $padding-btn-sm }
-  &.size-md { padding: $padding-btn-md }
-  &.size-lg { padding: $padding-btn-lg }
-  &.size-xl { padding: $padding-btn-xl }
+  &.size-sm { padding: $padding-btn-sm; }
+  &.size-md { padding: $padding-btn-md; }
+  &.size-lg { padding: $padding-btn-lg; }
+  &.size-xl { padding: $padding-btn-xl; }
 
   // ---------------------------------------------------
   // Shapes Modifiers 
