@@ -9,12 +9,12 @@
 // ---------------------------------------------------
 // Semantic Card Token
 // ---------------------------------------------------
-$transition-card:  token.$duration-200 token.$ease-standard;
+$transition-card:    token.$duration-200 token.$ease-standard;
 
-$shadow-card-hover: token.$shadow-md;
+$shadow-card-hover:  token.$shadow-md;
 $shadow-card-active: token.$shadow-sm;
 
-$gap-content-card: token.$gutter;
+$gap-content-card: token.$space-ui-24;
 $pad-content-card: token.$space-ui-24;
 
 // ---------------------------------------------------
@@ -24,7 +24,7 @@ $pad-content-card: token.$space-ui-24;
   @include mix.flex($direction: column);
   width: 100%;            
   border: 1px solid currentColor;
-
+  overflow: hidden;
   transition:
     border-color $transition-card,
     box-shadow $transition-card,
@@ -37,23 +37,26 @@ $pad-content-card: token.$space-ui-24;
     cursor: pointer;
     
     @media (hover: hover) {
-      &:hover { transform: translateY(-3px); box-shadow: $shadow-card-hover; } }
+      &:hover { transform: translateY(-3px); box-shadow: $shadow-card-hover; }
+    }
     
-    &:focus-visible, &:focus-within { transform: translateY(-3px); box-shadow: $shadow-card-hover; }
+    &:focus-visible,
+    &:focus-within { transform: translateY(-3px); box-shadow: $shadow-card-hover; }
+
     &:active { transform: translateY(-1px); box-shadow: $shadow-card-active; }
   }
 
   // ---------------------------------------------------
   // Internal Structure
   // ---------------------------------------------------
-  .card__content {
+  &__content {
     @include mix.flex($direction: column, $gap: $gap-content-card);
     padding: $pad-content-card;
 
     // ---------------------------------------------------
     // Content Alignment Modifiers
     // ---------------------------------------------------
-    &.is-center { align-items: center; text-align: center; }
+    &.is-center { align-items: center; justify-content: center; text-align: center; }
     &.is-start  { align-items: flex-start; text-align: start; }
     &.is-end    { align-items: flex-end; text-align: end; }
   }

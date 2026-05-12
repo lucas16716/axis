@@ -7,7 +7,6 @@
     <!-- PROJECT IDENTITY -->
     <title>Project Name | Short Complement</title>
     <meta name="description" content="SEO optimized description (max 160 characters)" />
-    
     <meta name="author" content="Company or Author Name" />
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content="Essential keywords" />
@@ -18,7 +17,7 @@
     <meta name="msapplication-TileColor" content="#000000" />
 
     <!-- PWA MANIFEST -->
-    <link rel="manifest" href="assets/favicon/manifest.json" />  
+    <link rel="manifest" href="manifest.json" />  
 
     <!-- OPEN GRAPH -->
     <meta property="og:title" content="Project Name | Short Complement" />
@@ -27,7 +26,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://yourdomain.com/" />
     <meta property="og:locale" content="en" />
-    <meta property="og:image" content="https://yourdomain.com/assets/share-image.jpg" />
+    <meta property="og:image" content="https://yourdomain.com/assets/media/img/share-image.jpg" />
+    <meta property="og:image:alt" content="Short Description" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -36,15 +36,27 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Project Name | Short Complement" />
     <meta name="twitter:description" content="Short share description" />
-    <meta name="twitter:image" content="https://yourdomain.com/assets/share-image.jpg" />
+    <meta name="twitter:image" content="https://yourdomain.com/assets/media/img/share-image.jpg" />
+    <meta name="twitter:image:alt" content="Short Description" />
 
     <!-- FAVICONS -->
-    <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/favicon/favicon.svg" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />  
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon-180x180.png" />
 
-    <!-- STYLES -->
+    <!-- STYLES (FONTS) -->
+
+    <!-- STYLES (LIBS) --> 
+
+    <!-- STYLES (MAIN CSS) -->
     <link rel="stylesheet" href="src/css/main.css" /> <!-- Development -->
-    <!-- <link rel="stylesheet" href="dist/main.min.css" /> Production -->
+    <!-- <link rel="stylesheet" href="dist/css/main.min.css" /> Production -->
+
+    <!-- SCRIPTS (LIBS) -->
+
+    <!-- SCRIPTS (MAIN JS) -->
+    <script src="src/js/script.js" defer></script> <!-- Development -->
+    <!-- <script src="dist/js/script.min.js" defer></script> Production -->
   </head>
 
   <body>
@@ -56,9 +68,5 @@
 
      <!-- FOOTER -->
     <footer></footer>
-    
-    <!-- SCRIPTS -->
-    <script src="src/js/script.js" defer></script> <!-- Development -->
-    <!-- <script src="dist/script.min.js" defer></script> Production -->
   </body>
 </html>

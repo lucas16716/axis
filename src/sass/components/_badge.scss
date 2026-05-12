@@ -8,11 +8,9 @@
 // ---------------------------------------------------
 // Semantic Badge Tokens
 // ---------------------------------------------------
-$font-size-badge:   token.$font-13; // 0.8rem  (~12.8px) - Major Third -1
+$font-size-badge:   token.$font-13;
 $line-height-badge: token.$lh-none;
-
 $border-rd-badge:   token.$radius-full;
-
 $padding-badge:     token.$space-ui-6 token.$space-ui-12;
 $gap-badge:         token.$space-ui-2;
 

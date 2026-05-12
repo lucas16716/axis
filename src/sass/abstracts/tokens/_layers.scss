@@ -9,6 +9,7 @@
 $z-layers: (
   back:     -1,   // Background elements
   base:     0,    // Default stacking context
+  sticky:   10,   // Sticky navigation & sub-headers
   header:   100,  // Fixed headers
   dropdown: 200,  // Dropdowns & popovers
   overlay:  900,  // Backdrops

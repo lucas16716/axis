@@ -70,8 +70,10 @@ axis/
 │   │   └── video/           → Video assets (.webm, .mp4)
 │   └── svg/                 → Vectors, icons and illustrations
 ├── dist/
-│   ├── main.min.css         → Minified CSS (auto-generated)
-│   └── script.min.js        → Minified JS (manually generated)
+│   ├── css/
+│   │   └── main.min.css     → Minified CSS (auto-generated)
+│   ├── js/
+│   │   └── script.min.js    → Minified JS (manually generated)
 ├── src/
 │   ├── css/
 │   │   └── main.css         → Compiled CSS for development

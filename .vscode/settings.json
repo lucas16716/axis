@@ -8,7 +8,7 @@
     {
       "format": "compressed",
       "extensionName": ".min.css",
-      "savePath": "/dist"
+      "savePath": "/dist/css"
     }
   ],
   "liveSassCompile.settings.generateMap": false,

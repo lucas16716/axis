@@ -24,9 +24,9 @@ Comment out the development links and uncomment the production ones:
 ```html
 <!-- STYLES -->
 <!-- <link rel="stylesheet" href="/src/css/main.css" /> -->
-<link rel="stylesheet" href="/dist/main.min.css" />
+<link rel="stylesheet" href="/dist/css/main.min.css" />
 
 <!-- SCRIPTS -->
 <!-- <script src="/src/js/script.js" defer></script> -->
-<script src="/dist/script.min.js" defer></script>
+<script src="/dist/js/script.min.js" defer></script>
 ```

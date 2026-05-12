@@ -10,7 +10,8 @@
 }
 *:focus-visible {
   outline: 2px solid #3437e6;
-  outline-offset: 2px;
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 *:focus:not(:focus-visible) {
   outline: none;
@@ -20,9 +21,6 @@ html {
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
           text-size-adjust: 100%;
-}
-
-html:focus-within {
   scroll-behavior: smooth;
 }
 
@@ -37,13 +35,15 @@ html {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: Oxygen, Ubuntu, Cantarell, system-ui, -apple-system, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  letter-spacing: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: Oxygen, Ubuntu, Cantarell, system-ui, -apple-system, sans-serif;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -188,6 +188,18 @@ ul, ol {
   }
 }
 
+@media (max-width: 379.98px) {
+  .hide-xxs-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 380px) {
+  .hide-xxs-up {
+    display: none !important;
+  }
+}
+
 .relative {
   position: relative;
 }
@@ -212,6 +224,10 @@ ul, ol {
 
 .text-right {
   text-align: right;
+}
+
+.no-wrap {
+  white-space: nowrap;
 }
 
 .truncate {
@@ -878,6 +894,80 @@ ul, ol {
     grid-column: span 12;
   }
 }
+@media (max-width: 379.98px) {
+  .grid-1-xxs {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .col-span-1-xxs {
+    grid-column: span 1;
+  }
+  .grid-2-xxs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .col-span-2-xxs {
+    grid-column: span 2;
+  }
+  .grid-3-xxs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .col-span-3-xxs {
+    grid-column: span 3;
+  }
+  .grid-4-xxs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .col-span-4-xxs {
+    grid-column: span 4;
+  }
+  .grid-5-xxs {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .col-span-5-xxs {
+    grid-column: span 5;
+  }
+  .grid-6-xxs {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .col-span-6-xxs {
+    grid-column: span 6;
+  }
+  .grid-7-xxs {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .col-span-7-xxs {
+    grid-column: span 7;
+  }
+  .grid-8-xxs {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .col-span-8-xxs {
+    grid-column: span 8;
+  }
+  .grid-9-xxs {
+    grid-template-columns: repeat(9, 1fr);
+  }
+  .col-span-9-xxs {
+    grid-column: span 9;
+  }
+  .grid-10-xxs {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .col-span-10-xxs {
+    grid-column: span 10;
+  }
+  .grid-11-xxs {
+    grid-template-columns: repeat(11, 1fr);
+  }
+  .col-span-11-xxs {
+    grid-column: span 11;
+  }
+  .grid-12-xxs {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .col-span-12-xxs {
+    grid-column: span 12;
+  }
+}
 .button {
   display: flex;
   justify-content: center;
@@ -890,8 +980,8 @@ ul, ol {
   text-decoration: none;
   white-space: nowrap;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+       user-select: none;
   cursor: pointer;
   transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -949,6 +1039,7 @@ ul, ol {
   flex-direction: column;
   width: 100%;
   border: 1px solid currentColor;
+  overflow: hidden;
   transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .card.is-interactive {
@@ -968,21 +1059,22 @@ ul, ol {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
-.card .card__content {
+.card__content {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
 }
-.card .card__content.is-center {
+.card__content.is-center {
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
-.card .card__content.is-start {
+.card__content.is-start {
   align-items: flex-start;
   text-align: start;
 }
-.card .card__content.is-end {
+.card__content.is-end {
   align-items: flex-end;
   text-align: end;
 }
