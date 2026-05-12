@@ -42,7 +42,6 @@ $padding-btn-xl:  token.$space-ui-16 token.$space-ui-32;
     background-color $transition-btn,
     color $transition-btn,
     border-color $transition-btn,
-    box-shadow $transition-btn,
     transform $transition-btn;
 
   // ---------------------------------------------------
@@ -67,6 +66,6 @@ $padding-btn-xl:  token.$space-ui-16 token.$space-ui-32;
   // ---------------------------------------------------
   // Variant Modifiers 
   // ---------------------------------------------------
-  &.is-pill { border-radius: $rd-full-round; }
-  &.is-ghost { text-decoration: underline; border: none; }
+  &.is-pill  { border-radius: $rd-full-round; }
+  &.is-ghost { text-decoration: underline; border-color: transparent; }
 }

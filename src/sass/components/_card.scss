@@ -40,8 +40,7 @@ $pad-content-card: token.$space-ui-24;
       &:hover { transform: translateY(-3px); box-shadow: $shadow-card-hover; }
     }
     
-    &:focus-visible,
-    &:focus-within { transform: translateY(-3px); box-shadow: $shadow-card-hover; }
+    &:focus-visible { transform: translateY(-3px); box-shadow: $shadow-card-hover; @include mix.focus-ring($radius: 0); }
 
     &:active { transform: translateY(-1px); box-shadow: $shadow-card-active; }
   }

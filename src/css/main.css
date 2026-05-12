@@ -983,7 +983,7 @@ ul, ol {
   -moz-user-select: none;
        user-select: none;
   cursor: pointer;
-  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:disabled {
   cursor: not-allowed;
@@ -1013,7 +1013,7 @@ ul, ol {
 }
 .button.is-ghost {
   text-decoration: underline;
-  border: none;
+  border-color: transparent;
 }
 
 .badge {
@@ -1051,9 +1051,12 @@ ul, ol {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
   }
 }
-.card.is-interactive:focus-visible, .card.is-interactive:focus-within {
+.card.is-interactive:focus-visible {
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  outline: 2px solid #3437e6;
+  outline-offset: 4px;
+  border-radius: 0;
 }
 .card.is-interactive:active {
   transform: translateY(-1px);
