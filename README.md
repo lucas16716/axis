@@ -1,17 +1,14 @@
 <div align="center">
 
-<img src="assets/favicon/favicon.svg" width="130" height="130" alt="AXIS symbol"/>
+<img src="public/assets/favicon/favicon.svg" width="130" height="130" alt="AXIS symbol"/>
 
-# A X I S
+# AXIS
 
 **A modern Sass architecture and starter foundation for scalable, maintainable web projects**
 
-*Structure your frontend. Focus on building, not configuring*
+_Structure your frontend. Focus on building, not configuring_
 
-[![Version](https://img.shields.io/badge/version-1.0.0-e8e4de?style=flat-square&labelColor=10b981&color=1c1b2e)](https://github.com/lucas16716/axis/releases)&nbsp;
-[![Template](https://img.shields.io/badge/template-ready-e8e4de?style=flat-square&labelColor=3437e6&color=1c1b2e)](https://github.com/lucas16716/axis/generate)&nbsp;
-[![License](https://img.shields.io/badge/license-MIT-e8e4de?style=flat-square&labelColor=ef4444&color=1c1b2e)](https://github.com/lucas16716/axis/blob/main/LICENSE)&nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/lucas16716/axis?style=social)
+[![Version](https://img.shields.io/badge/version-2.0.0-e8e4de?style=flat-square&labelColor=10b981&color=1c1b2e)](https://github.com/lucas16716/axis/releases)&nbsp; [![Template](https://img.shields.io/badge/template-ready-e8e4de?style=flat-square&labelColor=3437e6&color=1c1b2e)](https://github.com/lucas16716/axis/generate)&nbsp; [![License](https://img.shields.io/badge/license-MIT-e8e4de?style=flat-square&labelColor=ef4444&color=1c1b2e)](https://github.com/lucas16716/axis/blob/main/LICENSE)&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/lucas16716/axis?style=social)
 
 🇧🇷 [Leia em Português](./README-ptbr.md)
 
@@ -19,148 +16,143 @@
 
 ## What is AXIS?
 
-AXIS is a modern Sass-based architecture designed to structure frontend projects in a clear, scalable, predictable and maintainable way.
+AXIS is a modern Sass-based architecture powered by Vite, designed to structure frontend projects in a clear, scalable, and maintainable way.
 
-It is a starter foundation that assumes traditional development — **no Node, no bundler, no dependencies** — just HTML, Sass and JavaScript. Clone it, define your semantic tokens, and start building on a solid base: normalized reset, configured typography, a functional and editable layout system, neutral components ready for your visual identity, and utilities that accelerate development — so the focus stays on what matters: building the interface.
+It combines the simplicity of traditional development (HTML, Sass and JavaScript) with the power of modern build tooling. Vite delivers an instant development server with HMR and an automated production pipeline that compiles, prefixes and minifies everything for you. Clone it, install dependencies, define your semantic tokens, and start building on a solid base: normalized reset, configured typography, a functional layout system, neutral components ready for your visual identity, and utilities that accelerate development — so the focus stays on what matters: building the interface.
 
 ## Philosophy
 
 AXIS is built around six core principles:
 
-**Development freedom**
-No frameworks, libraries or dependencies are imposed. It is an opinionated structure with total developer freedom, providing a solid architectural foundation while allowing each project to evolve according to its own needs.
+**Modern and agile development** — Vite drives the entire development experience, eliminating complex configuration and focusing on speed. Node.js and NPM make the project scalable and enable professional integration of external libraries.
 
-**Architectural simplicity**
-The folder structure is direct and predictable. Each layer has a single, clear responsibility, making navigation, maintenance and scalability straightforward. Every file has a place, and every place has a purpose.
+**Architectural simplicity** — The folder structure is direct and predictable. Each layer — both in Sass and in JavaScript — has a single, clear responsibility. JavaScript follows the ES Modules pattern, keeping logic organized in isolated, clean files.
 
-**Modular Sass architecture**
-Five clearly separated layers, each with a single responsibility, communicating through `@use` and `@forward` to create a logical style hierarchy: Abstracts → Base → Layout → Components → Sections.
+**Modular Sass architecture** — Five clearly separated layers that communicate through `@use` and `@forward`, creating a logical style hierarchy: Abstracts → Base → Layout → Components → Sections. Everything is processed in-memory during development for maximum performance.
 
-**Token-driven design**
-All visual values come from tokens. Primitive tokens are centralized in `abstracts/tokens/` and globally accessible via `@use`. Semantic tokens are defined locally in the partial where they are consumed — eliminating unnecessary file navigation and keeping values close to where they are used.
+**Token-driven design** — All visual values come from tokens. Primitive tokens are centralized in `abstracts/tokens/` and globally accessible via `@use`. Semantic tokens are defined locally in the partial where they are consumed — eliminating unnecessary file navigation and keeping values close to where they are used.
 
 > E.g.: semantic tokens in `base/_typography.scss` for typography, in `abstracts/tokens/_spacing.scss` for layout configuration, and inside each component partial for its own padding, transition and sizing values.
 
-**Desktop-first workflow**
-The architecture starts from the largest layout and adapts downward via `@include respond()`. Full support for `respond-up()` is included for progressive enhancement when needed.
+**Desktop-first workflow** — The architecture starts from the largest layout and adapts downward via `@include respond()`. Full support for `respond-up()` is included for progressive enhancement when needed.
 
-**Performance-oriented development**
-CSS is compiled and minified automatically. JavaScript is minified manually before deploy. Assets follow optimization guidelines documented in each folder. `index.html` ships with pre-configured SEO and Open Graph meta tags. Every folder and file in AXIS includes documentation, tips and comments guiding frontend best practices.
+**Automation and performance** — The entire compilation, prefixing and minification pipeline (CSS and JS) is automated by Vite. No third-party extensions or manual steps needed. `index.html` ships pre-configured with SEO and Open Graph meta tags, and an efficient favicon strategy (`.ico` at root for crawler compatibility, modern formats in `public/assets/favicon/`). Every folder and file in AXIS includes documentation, tips and comments guiding frontend best practices.
 
 ## Stack
 
-| Technology | Usage |
-|---|---|
-| HTML5 | Base template with SEO, OG and PWA meta tags |
-| Sass (SCSS) | Modular architecture with design tokens |
-| JavaScript | Free — no structure imposed |
+| Technology  | Usage                                           |
+| ----------- | ----------------------------------------------- |
+| Vite        | Dev server (HMR) and automated production build |
+| HTML5       | Base template with SEO, OG and PWA meta tags    |
+| Sass (SCSS) | Modular architecture with design tokens         |
+| JavaScript  | Modular architecture based on native ES Modules |
 
 ## Project Structure
 
 ```
 axis/
-├── .gitignore
-├── .vscode/
-│   └── settings.json        → Live Sass Compiler configuration
-├── assets/
-│   ├── docs/                → Downloadable documents
-│   ├── favicon/             → Icons and manifest.json
-│   ├── media/
-│   │   ├── img/             → Raster images (.webp, .jpg, .png)
-│   │   └── video/           → Video assets (.webm, .mp4)
-│   └── svg/                 → Vectors, icons and illustrations
-├── dist/
-│   ├── css/
-│   │   └── main.min.css     → Minified CSS (auto-generated)
-│   ├── js/
-│   │   └── script.min.js    → Minified JS (manually generated)
+├── public/
+│   ├── assets/
+│   │   ├── docs/                → Downloadable documents
+│   │   ├── favicon/             → Modern icons (.svg, .png)
+│   │   ├── media/
+│   │   │   ├── img/             → Raster images (.webp, .jpg, .png)
+│   │   │   └── video/           → Videos (.webm, .mp4)
+│   │   └── svg/                 → Vectors, icons, and illustrations
+│   ├── favicon.ico              → Legacy icon (root level for bot compatibility)
+│   └── manifest.json            → PWA settings and browser icons
 ├── src/
-│   ├── css/
-│   │   └── main.css         → Compiled CSS for development
 │   ├── js/
-│   │   └── script.js        → Project JavaScript (empty — ready for your project)
+│   │   ├── base/                → Global scripts and utility functions
+│   │   ├── components/          → Isolated component logic (menu, modal)
+│   │   ├── vendor/              → Third-party library configs (Swiper, GSAP)
+│   │   └── script.js            → Master entry point — imports JS modules and Sass
 │   └── sass/
-│       ├── abstracts/       → Tokens, functions and mixins
-│       ├── base/            → Reset, typography, global and utilities
-│       ├── layout/          → Container, flex and grid
-│       ├── components/      → Button, card and badge
-│       ├── sections/        → Header and footer (empty — ready for your project)
-│       └── main.scss        → Single entry point
-├── index.html
-├── LICENSE
-├── README-ptbr.md
-└── README.md
+│       ├── abstracts/           → Tokens, functions, and mixins
+│       ├── base/                → Reset, typography, and global styles
+│       ├── layout/              → Container, flex, and grid utilities
+│       ├── components/          → Neutral UI component styles
+│       ├── sections/            → Project-specific section styles
+│       └── main.scss            → Sass entry point (imported via script.js)
+├── .gitignore                   → Files ignored by Git (node_modules, dist)
+├── CHANGELOG.md                 → Record of all notable project changes
+├── CONTRIBUTING.md              → Guidelines for contributing to the project
+├── index.html                   → Main project template
+├── LICENSE                      → Project license (MIT)
+├── package.json                 → NPM dependencies and automation scripts
+├── README.md                    → English documentation
+├── README-ptbr.md               → Portuguese documentation
+└── vite.config.js               → Vite configuration (dev server, build, paths)
 ```
 
 ## Sass Architecture
 
 AXIS organizes Sass into **five layers** with clear responsibilities, following ITCSS principles:
 
-**1. Abstracts**
-Nothing here generates CSS directly. This is the entire foundation of the system.
+**1. Abstracts** — Nothing here generates CSS directly. This is the entire foundation of the system.
 
 - **`tokens/`** — 9 design token files with generic, standardized and scalable values: colors, spacing, typography, breakpoints, motion, elevation, layers, radius and opacity
 - **`functions/`** — typed token access via `bp()` and `z()`, and color helpers using `color.scale()`
 - **`mixins/`** — container, flex, grid, grid-auto, respond, respond-up, absolute-center, focus-ring, visually-hidden and truncate
 
-**2. Base**
-Normalization and global styles without classes.
+**2. Base** — Normalization and global styles without classes.
 
 - **`_reset.scss`** — box-sizing, margin/padding reset, accessible focus-ring, text-size-adjust and scroll-behavior
 - **`_typography.scss`** — base font with semantic tokens, Major Third (1.25) heading scale
 - **`_global.scss`** — responsive media, font inheritance, prefers-reduced-motion
 - **`_utilities.scss`** — sr-only, display, responsive visibility, position, text alignment, truncate and interaction
 
-**3. Layout**
-Structural layout system with no visual opinions.
+**3. Layout** — Structural layout system with no visual opinions.
 
 - **`_container.scss`** — `.container` and variants `.container-{sm|md|lg|xl|xxl}`
 - **`_flex.scss`** — `.flex` with direction, justify and align modifiers
 - **`_grid.scss`** — `.grid-{1-12}`, `.col-span-{1-12}`, `.grid-auto` and responsive variants
 
-**4. Components**
-Neutral, token-driven components. No hardcoded colors — they use `currentColor` and inherit from context.
+**4. Components** — Neutral, token-driven components. No hardcoded colors — they use `currentColor` and inherit from context.
 
 - **`_button.scss`** — sizes (sm/md/lg/xl), shapes (square/circle), variants (pill/ghost), disabled state
 - **`_card.scss`** — static and interactive, with `card__content` structure and content alignment modifiers
 - **`_badge.scss`** — inline, pill, neutral
 
-**5. Sections**
-Empty partials for **header** and **footer**, ready to be styled per project.
+**5. Sections** — Empty partials for **header** and **footer**, ready to be styled per project.
 
 ## Design Tokens
 
-| File | What it defines |
-|---|---|
-| `_colors.scss` | Grayscale (white → black) + 4 functional colors (green, yellow, red, blue) |
-| `_spacing.scss` | 8pt macro scale (layout) + micro scale (UI controls) + semantic tokens `$gutter` and `$section-pad` |
-| `_typography.scss` | 18 sizes (Major Third + UI), weights, line-heights and letter-spacings |
-| `_breakpoints.scss` | 6 desktop-first breakpoints: xxl, xl, lg, md, sm, xs |
-| `_motion.scss` | 5 durations + 4 easing curves (standard, in, out, back) |
-| `_elevation.scss` | 5 shadow levels (none → lg) |
-| `_layers.scss` | Semantic z-index: back, base, header, dropdown, overlay, modal, tooltip |
-| `_radius.scss` | 6 radius values: xs, sm, md, lg, xl, full |
-| `_opacity.scss` | 6 levels: 0, 20, 40, 60, 80, 100 |
+| File                | What it defines                                                                                     |
+| ------------------- | --------------------------------------------------------------------------------------------------- |
+| `_colors.scss`      | Grayscale (white → black) + 4 functional colors (green, yellow, red, blue)                          |
+| `_spacing.scss`     | 8pt macro scale (layout) + micro scale (UI controls) + semantic tokens `$gutter` and `$section-pad` |
+| `_typography.scss`  | 18 sizes (Major Third + UI), weights, line-heights and letter-spacings                              |
+| `_breakpoints.scss` | 7 desktop-first breakpoints: xxl, xl, lg, md, sm, xs, xxs                                           |
+| `_motion.scss`      | 5 durations + 4 easing curves (standard, in, out, back)                                             |
+| `_elevation.scss`   | 5 shadow levels (none → lg)                                                                         |
+| `_layers.scss`      | Semantic z-index: back, base, sticky, header, dropdown, overlay, modal, tooltip                     |
+| `_radius.scss`      | 6 radius values: xs, sm, md, lg, xl, full                                                           |
+| `_opacity.scss`     | 6 levels: 0, 20, 40, 60, 80, 100                                                                    |
 
 ## Layout System
 
 ### Container
 
 ```html
-<div class="container">          <!-- max-width: 1200px (default via mixin) -->
-<div class="container-sm">       <!-- max-width: 640px -->
-<div class="container-md">       <!-- max-width: 768px -->
-<div class="container-lg">       <!-- max-width: 1024px -->
-<div class="container-xl">       <!-- max-width: 1200px -->
-<div class="container-xxl">      <!-- max-width: 1280px -->
+<div class="container">
+  <!-- max-width: 1200px (default via mixin) -->
+  <div class="container-sm"><!-- max-width: 640px --></div>
+  <div class="container-md"><!-- max-width: 768px --></div>
+  <div class="container-lg"><!-- max-width: 1024px --></div>
+  <div class="container-xl"><!-- max-width: 1200px --></div>
+  <div class="container-xxl"><!-- max-width: 1280px --></div>
+</div>
 ```
 
 ### Flex
 
 ```html
 <div class="flex items-center justify-between">
-<div class="flex flex-col items-start">
-<div class="flex flex-wrap justify-center">
+  <div class="flex flex-col items-start">
+    <div class="flex flex-wrap justify-center"></div>
+  </div>
+</div>
 ```
 
 Available modifiers: `flex-col`, `flex-wrap`, `justify-start`, `justify-center`, `justify-between`, `justify-end`, `items-stretch`, `items-center`, `items-start`, `items-end`.
@@ -168,12 +160,18 @@ Available modifiers: `flex-col`, `flex-wrap`, `justify-start`, `justify-center`,
 ### Grid
 
 ```html
-<div class="grid-3">             <!-- 3 fixed columns -->
-<div class="grid-3 grid-1-md">   <!-- 3 columns → 1 column at md -->
-<div class="grid-auto">          <!-- automatic responsive columns -->
+<div class="grid-3">
+  <!-- 3 fixed columns -->
+</div>
 
-<div class="col-span-2">         <!-- item spans 2 columns -->
-<div class="col-span-2-md">      <!-- spans 2 columns at md -->
+<div class="grid-3 grid-1-md">
+  <!-- 3 columns → 1 column at md -->
+</div>
+
+<div class="grid-auto">
+  <!-- automatic responsive columns -->
+  <div class="col-span-2"><!-- item spans 2 columns --></div>
+</div>
 ```
 
 > Responsive variants `.grid-{n}-{bp}` override only `grid-template-columns`. The base class `.grid-{n}` must always be present on the element.
@@ -211,9 +209,7 @@ Available modifiers: `flex-col`, `flex-wrap`, `justify-start`, `justify-center`,
 
 <!-- Interactive card -->
 <div class="card is-interactive">
-  <div class="card__content is-center">
-    ...
-  </div>
+  <div class="card__content is-center">...</div>
 </div>
 ```
 
@@ -261,54 +257,49 @@ git clone https://github.com/lucas16716/axis.git your-project-name
 cd your-project-name
 ```
 
-### 2. Install Live Sass Compiler
+### 2. Install dependencies
 
-In VS Code, install the **Live Sass Compiler** extension by Glenn Marks.
-
-The `.vscode/settings.json` file is already configured — once Watch Sass is active, the compiler will automatically generate:
-
-- `src/css/main.css` → expanded CSS for development
-- `dist/main.min.css` → minified CSS for production
-
-### 3. Enable Watch Sass
-
-Click **Watch Sass** in the VS Code status bar.
-
-From this point on, any change to `.scss` files will compile both outputs automatically.
-
-### 4. Update index.html
-
-By default, `index.html` points to the development CSS. For production, swap the commented links:
-
-```html
-<!-- Development -->
-<link rel="stylesheet" href="/src/css/main.css" />
-
-<!-- Production — uncomment and comment the one above -->
-<!-- <link rel="stylesheet" href="/dist/main.min.css" /> -->
+```bash
+npm install
 ```
 
-### 5. Start building
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+Vite starts a local dev server with HMR. Any change to `.scss` or `.js` files is reflected instantly in the browser — no manual compilation needed.
+
+### 4. Start building
 
 Add sections in `src/sass/sections/` and register them in `sections/_index.scss`. Define semantic tokens in the partials where they are consumed and use AXIS layout classes and components as the foundation.
+
+### 5. Build for production
+
+```bash
+npm run build
+```
+
+Vite compiles, prefixes and minifies all CSS and JavaScript automatically. The optimized output is placed in the `dist/` folder, ready for deploy.
 
 ## Starting a New Project with AXIS
 
 When cloning AXIS for a new project, the recommended workflow is:
 
 1. **Update `index.html`** — replace SEO, OG and Twitter Card placeholders with real project data
-2. **Define your visual identity** — update `manifest.json` with the project name, theme color and icons
+2. **Define your visual identity** — update `public/manifest.json` with the project name, theme color and icons
 3. **Configure your semantic tokens** — add semantic color variables to `_colors.scss` and adjust typography values in `_typography.scss` for the chosen typeface
 4. **Style header and footer** — `sections/_header.scss` and `sections/_footer.scss` are empty and ready for the project
 5. **Create your sections** — add new partials in `sections/` and register them in `sections/_index.scss`
 
 ## Production Optimization
 
-AXIS automatically generates minified CSS via Live Sass Compiler. For projects where final bundle size is critical, consider using **PurgeCSS** to remove unused CSS classes from the production build.
+Running `npm run build` triggers Vite's full production pipeline — CSS and JavaScript are automatically compiled, prefixed and minified. No manual steps required.
+
+For projects where final bundle size is critical, consider using **PurgeCSS** to remove unused CSS classes from the production output.
 
 → [purgecss.com](https://purgecss.com)
-
-JavaScript (`src/js/script.js`) can be minified manually before deploy. Recommended tools: [Terser](https://terser.org) or [Toptal JS Minifier](https://www.toptal.com/developers/javascript-minifier).
 
 ## Contributing
 

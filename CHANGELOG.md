@@ -4,6 +4,29 @@ All notable changes to AXIS will be documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] — 2026-05-14
+
+### Added
+
+- **Build System**: Full **Vite** integration for lightning-fast development (HMR) and automated production bundling.
+- **JavaScript Architecture**: Modular architecture based on **ES Modules** (organized into `base/`, `components/`, and `vendor/` directories).
+- **Dependency Management**: Implementation of `package.json` for professional package management via NPM.
+- **Master Entry Point**: `script.js` now acts as the project orchestrator, importing both JavaScript modules and the Sass architecture.
+- **Project Tooling**: Added essential CLI commands: `npm run dev`, `npm run build`, and `npm run preview`.
+
+### Changed
+
+- **Sass Workflow**: Migrated from `Live Sass Compiler` extension to Vite's native compiler (in-memory processing).
+- **Favicon Strategy**: Moved `favicon.ico` to the project root for improved compatibility with crawlers and legacy browsers.
+- **Asset Resolution**: Updated `index.html` to use absolute paths, ensuring reliable asset loading across different environments.
+- **Project Documentation**: Refactored all README files to reflect the new automated workflow.
+
+### Removed
+
+- **Legacy Configuration**: Deleted `.vscode/settings.json` (removed dependency on third-party VS Code extensions).
+- **Static CSS**: Removed the `src/css/` directory (styles are now processed dynamically in development).
+- **Manual Minification**: Removed the `dist/script.min.js` placeholder (now handled automatically by the build pipeline).
+
 ## [1.0.0] — 2026/03/10
 
 Initial release.
@@ -11,11 +34,13 @@ Initial release.
 ### Added
 
 **Architecture**
+
 - Five-layer Sass architecture following ITCSS principles: Abstracts → Base → Layout → Components → Sections
 - Single entry point `main.scss` with full `@use` / `@forward` module system — no `@import`
 - `.vscode/settings.json` pre-configured for Live Sass Compiler with dual output: expanded (`src/css/`) and compressed (`dist/`)
 
 **Design Tokens** — 9 token files in `abstracts/tokens/`
+
 - `_colors.scss` — grayscale scale (white → black) + 4 functional colors (green, yellow, red, blue)
 - `_spacing.scss` — 8pt macro grid, micro UI scale, and semantic tokens `$gutter` and `$section-pad`
 - `_typography.scss` — Major Third (1.25) scale + UI sizes, weights, line-heights and letter-spacings
@@ -27,11 +52,13 @@ Initial release.
 - `_opacity.scss` — 6 levels: 0, 20, 40, 60, 80, 100
 
 **Functions** — `abstracts/functions/`
+
 - `bp()` — safe breakpoint map access with `@error` on invalid keys
 - `z()` — semantic z-index access with `@error` on invalid keys
 - `color-dark()` / `color-light()` — color scaling via `color.scale()`
 
 **Mixins** — `abstracts/mixins/`
+
 - `container()` — centered wrapper with `padding-inline` and `margin-inline`
 - `flex()` — shorthand flex container with optional direction, justify, align and gap
 - `grid()` — fixed-column grid with configurable gap
@@ -44,25 +71,30 @@ Initial release.
 - `truncate()` — single-line and multi-line text truncation via `-webkit-line-clamp`
 
 **Base layer**
+
 - `_reset.scss` — box-sizing, margin/padding reset, accessible `focus-visible`, `text-size-adjust`, `scroll-behavior`
 - `_typography.scss` — system-ui font stack, Major Third heading scale (h1 3.815rem → h6 1.25rem)
 - `_global.scss` — responsive media, font inheritance for form elements, `prefers-reduced-motion`
 - `_utilities.scss` — `.sr-only`, display, responsive visibility (`.hide-{bp}-down` / `.hide-{bp}-up`), position, text alignment, `.truncate`, `.truncate-2`, `.no-select`
 
 **Layout layer**
+
 - `_container.scss` — `.container` (default 1200px) + `.container-{sm|md|lg|xl|xxl}`
 - `_flex.scss` — `.flex` with `flex-col`, `flex-wrap`, `justify-{start|center|between|end}`, `items-{stretch|center|start|end}`
 - `_grid.scss` — `.grid-{1-12}`, `.col-span-{1-12}`, `.grid-auto`, responsive variants `.grid-{n}-{bp}` and `.col-span-{n}-{bp}`
 
 **Components**
+
 - `_button.scss` — base `.button`, sizes (sm/md/lg/xl), shapes (square/circle), variants (pill/ghost), disabled state
 - `_card.scss` — `.card`, `.is-interactive` with hover/focus/active transitions, `.card__content` with `is-start`, `is-center`, `is-end`
 - `_badge.scss` — inline pill badge using `currentColor`
 
 **Sections**
+
 - `_header.scss` and `_footer.scss` — empty partials, ready for project-specific styles
 
 **Project structure**
+
 - `index.html` — full meta setup: charset, viewport, SEO, Open Graph, Twitter Card, PWA manifest, favicons
 - `assets/favicon/manifest.json` — PWA manifest template with icons
 - `dist/script.min.js` — placeholder for manually minified JavaScript
@@ -73,10 +105,11 @@ Initial release.
 ### Upcoming Versions
 
 Possible future improvements include:
+
 - new base components
 - documentation improvements
 - example projects built with AXIS
 
 ---
 
-*For upcoming changes, see open [issues](https://github.com/lucas16716/axis/issues) and [pull requests](https://github.com/lucas16716/axis/pulls).*
+_For upcoming changes, see open [issues](https://github.com/lucas16716/axis/issues) and [pull requests](https://github.com/lucas16716/axis/pulls)._

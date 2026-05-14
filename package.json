@@ -1,0 +1,24 @@
+{
+  "name": "axis",
+  "version": "2.0.0",
+  "description": "Structured Sass foundation for scalable frontend projects — ready to clone and build.",
+  "author": "Lucas Couto",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucas16716/axis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucas16716/axis/issues"
+  },
+  "homepage": "https://github.com/lucas16716/axis#readme",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.99.0",
+    "vite": "^8.0.13"
+  }
+}

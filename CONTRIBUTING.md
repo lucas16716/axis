@@ -6,9 +6,10 @@ Thank you for taking the time to contribute. AXIS is an open project and all con
 
 - [Code of Conduct](#code-of-conduct)
 - [Bug Reports](#bug-reports)
+- [Development Setup](#development-setup)
+- [New Components & Modules](#new-components--modules)
 - [Suggesting Improvements](#suggesting-improvements)
 - [Pull Requests](#pull-requests)
-- [New Components & Tokens](#new-components--tokens)
 - [Commit Style](#commit-style)
 
 ## Code of Conduct
@@ -19,72 +20,74 @@ Be respectful. Constructive feedback is always welcome; hostility is not. Contri
 
 Found something broken or behaving unexpectedly? Open an issue and include:
 
-- A clear description of the problem
-- Steps to reproduce it
-- What you expected to happen vs. what actually happened
-- Browser and OS if relevant
+- A clear description of the problem.
+- Steps to reproduce it.
+- Browser and OS if relevant.
 
-Keep the issue focused on a single problem. If you found multiple bugs, open separate issues.
+## Development Setup
+
+AXIS uses **Vite** to manage the development environment. To start contributing:
+
+1. Fork and clone the repository.
+2. Install dependencies: `npm install`
+3. Start the dev server: `npm run dev`
+4. Open the local URL in your browser — changes are reflected instantly via HMR.
+
+## New Components & Modules
+
+AXIS ships with a deliberately small set of components. New additions are evaluated against these criteria:
+
+**For CSS Components:**
+
+- Must be neutral — no hardcoded project-specific colors.
+- Must follow the BEM-light naming convention (`.component`, `.component__element`, `.is-modifier`).
+
+**For JS Modules:**
+
+- Must be written as **ES Modules**.
+- Place logic in `src/js/components/` or `src/js/base/`.
+- Must be imported and initialized via the main entry point (`src/js/script.js`).
+
+**For Tokens:**
+
+- Must be reusable across different project types.
+- Primitive tokens belong in `abstracts/tokens/`.
 
 ## Suggesting Improvements
 
-Have an idea that could make AXIS better? Open an issue with the `enhancement` label and describe:
+Have an idea to make AXIS better? Open an issue with the `enhancement` label and describe:
 
-- What you'd like to see added or changed
-- Why it fits the AXIS philosophy (simple, token-driven, dependency-free)
-- Any references or examples that illustrate the idea
+- What you'd like to see added or changed.
+- Why it fits the AXIS philosophy (**minimalist, token-driven, and lightweight**).
 
-Not every suggestion will be accepted — AXIS is intentionally minimal. If a feature would add complexity without clear architectural benefit, it's likely out of scope. But the conversation is always welcome.
+AXIS is intentionally minimal. If a feature adds too much complexity without clear benefit, it might be considered out of scope.
 
 ## Pull Requests
 
-Before opening a PR, please open an issue first so we can discuss the change. This avoids wasted effort if the direction isn't aligned.
+Before opening a PR, please open an issue first so we can discuss the change. When submitting:
 
-When submitting a PR:
-
-1. Fork the repository and create a branch from `main`
-2. Name your branch descriptively — e.g. `fix/button-disabled-state` or `feat/new-mixin`
-3. Keep the change focused — one PR per fix or feature
-4. Follow the existing code style (see below)
-5. Test your changes across modern browsers before submitting
-6. Write a clear PR description explaining what changed and why
-
-## New Components & Tokens
-
-AXIS ships with a deliberately small set of components and tokens. New additions are evaluated against the following criteria:
-
-**For components:**
-- Must be neutral — no hardcoded colors, no visual opinions
-- Must use `currentColor` or inherit from context
-- Must follow the existing BEM-light naming convention (`.component`, `.component__element`, `.is-modifier`)
-- Must not require JavaScript to function
-
-**For tokens:**
-- Must be genuinely reusable across different project types
-- Primitive tokens belong in `abstracts/tokens/`
-- Semantic tokens belong in the partial where they are consumed
-- Avoid adding tokens that duplicate existing ones with marginal differences
-
-If you're unsure whether something fits, open an issue and ask before building it.
+1. Create a branch from `main`.
+2. Name your branch descriptively — e.g., `fix/button-alignment` or `feat/modal-module`.
+3. Keep the change focused — one PR per fix or feature.
+4. Run `npm run build` before submitting to ensure there are no bundling errors.
+5. Write a clear PR description explaining what changed and why.
 
 ## Commit Style
 
 Follow [Conventional Commits](https://www.conventionalcommits.org):
 
 ```
-feat: add grid-auto responsive modifier
-fix: correct button disabled opacity token
-docs: update mixin usage examples
-refactor: simplify respond() mixin logic
-chore: clean up trailing whitespace
+feat: add accordion component logic
+fix: resolve z-index conflict in header
+docs: update installation steps in README
+refactor: migrate utility classes to new token system
 ```
 
 Keep commit messages short and in the present tense. One logical change per commit.
 
 ## Acknowledgements
 
-Every contribution helps AXIS evolve and become a better foundation for frontend projects.
-Thank you for being part of it.
+Every contribution helps AXIS evolve and become a better foundation for frontend projects. Thank you for being part of it.
 
 ## Support the Project
 
