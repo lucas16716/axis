@@ -4,9 +4,9 @@
 
 # AXIS
 
-**A modern Sass architecture and starter foundation for scalable, maintainable web projects**
+**Uma fundação frontend moderna construída para projetos web escaláveis, organizados e de fácil manutenção**
 
-_Structure your frontend. Focus on building, not configuring_
+_Estruture seu frontend. Foque em construir, não em configurar_
 
 [![Version](https://img.shields.io/badge/version-2.0.0-e8e4de?style=flat-square&labelColor=10b981&color=1c1b2e)](https://github.com/lucas16716/axis/releases)&nbsp; [![Template](https://img.shields.io/badge/template-ready-e8e4de?style=flat-square&labelColor=3437e6&color=1c1b2e)](https://github.com/lucas16716/axis/generate)&nbsp; [![License](https://img.shields.io/badge/license-MIT-e8e4de?style=flat-square&labelColor=ef4444&color=1c1b2e)](https://github.com/lucas16716/axis/blob/main/LICENSE)&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/lucas16716/axis?style=social)
 
@@ -16,38 +16,59 @@ _Structure your frontend. Focus on building, not configuring_
 
 ## O que é o AXIS?
 
-O AXIS é uma arquitetura moderna baseada em Sass e impulsionada pelo Vite, projetada para estruturar projetos frontend de forma clara, escalável e com altíssima performance.
+O AXIS é uma fundação frontend modular impulsionada pelo Vite, Sass e JavaScript moderno.
 
-Une a simplicidade do desenvolvimento tradicional (HTML, Sass e JavaScript) com o poder das ferramentas modernas de automação. O Vite entrega um servidor de desenvolvimento com atualização instantânea (HMR) e um processo de build que compila, prefixa e minifica tudo automaticamente para produção. Clone, instale as dependências, defina seus tokens e comece a desenvolver com uma base sólida: reset normalizado, tipografia configurada, sistema de layout funcional e de fácil edição, componentes neutros prontos para receber sua identidade visual, utilitários que agilizam o desenvolvimento e um sistema modular pronto para qualquer escala.
+Foi projetado para ajudar desenvolvedores a iniciar projetos mais rapidamente com uma estrutura limpa, escalável e pronta para produção — sem impor decisões visuais ou padrões específicos de frameworks.
+
+O AXIS não é um framework.
+
+É um ponto de partida arquitetural flexível focado em:
+
+- organização
+- facilidade de manutenção
+- escalabilidade
+- experiência do desenvolvedor (DX)
+
+Clone o projeto, defina seus design tokens, estruture suas seções e comece a desenvolver imediatamente.
+
+## Recursos
+
+- Arquitetura Sass modular
+- Sistema de design tokens
+- Workflow automatizado via Vite
+- Estrutura nativa baseada em ES Modules
+- Componentes neutros e reutilizáveis
+- Utilitários de layout responsivo
+- Template inicial com SEO & Open Graph
+- Pipeline de build pronto para produção
+- Organização de pastas escalável
+- Estrutura preparada para animações (motion)
+- Fundação totalmente personalizável
 
 ## Filosofia
 
-O AXIS foi construído em torno de seis princípios fundamentais:
+O AXIS foi construído em torno de um princípio simples:
 
-**Desenvolvimento moderno e ágil** — O Vite conduz toda a experiência de desenvolvimento, eliminando configurações complexas e focando em velocidade. A presença do Node.js e do NPM torna o projeto escalável e permite a integração profissional de bibliotecas externas.
+> fundações frontend devem acelerar o desenvolvimento — não ditar o design.
 
-**Simplicidade arquitetural** — A estrutura de pastas é direta e previsível. Cada camada — tanto no Sass quanto no JavaScript — possui uma responsabilidade clara. O JS segue o padrão de ES Modules, mantendo a lógica organizada em arquivos isolados e limpos.
+O projeto foca em fornecer:
 
-**Arquitetura Sass modular** — Cinco camadas bem separadas que se comunicam através de `@use` e `@forward`, criando uma hierarquia lógica de estilos: Abstracts → Base → Layout → Components → Sections. Tudo é processado em memória durante o desenvolvimento para garantir performance máxima.
+- estrutura em vez de interfaces opinativas
+- organização em vez de excesso de abstrações
+- flexibilidade em vez de sistemas rígidos
 
-**Token-driven design** — Todos os valores visuais vêm de tokens. Tokens primitivos ficam centralizados em `abstracts/tokens/` e são acessíveis globalmente via `@use`. Tokens semânticos são definidos localmente na partial onde são consumidos — eliminando navegação desnecessária entre arquivos e mantendo os valores próximos de onde são usados.
-
-> Ex: tokens semânticos em `base/_typography.scss` para tipografia, em `abstracts/tokens/_spacing.scss` para configuração de layout, e dentro de cada componente para seus próprios valores de padding, transição e tamanho.
-
-**Desktop-first workflow** — A arquitetura parte do layout maior e adapta para telas menores via `@include respond()`. Possui suporte completo a `respond-up()` para estratégias de progressive enhancement.
-
-**Automação e performance** — Todo o processo de compilação, prefixação e minificação (CSS e JS) é automatizado pelo Vite. Não há necessidade de extensões de terceiros ou minificação manual. O `index.html` já vem com meta tags de SEO e Open Graph pré-configuradas, e uma estratégia eficiente de favicons (`.ico` na raiz para compatibilidade com crawlers, formatos modernos em `public/assets/favicon/`). Cada pasta e arquivo do AXIS possui documentação, dicas e comentários que guiam para as melhores práticas de desenvolvimento frontend.
+Cada camada tem uma responsabilidade clara. Cada arquivo existe para simplificar a escalabilidade e a manutenção a longo prazo.
 
 ## Stack
 
-| Tecnologia  | Uso                                                         |
-| ----------- | ----------------------------------------------------------- |
-| Vite        | Servidor de desenvolvimento (HMR) e bundling de produção    |
-| HTML5       | Template base com meta tags de SEO, OG e PWA                |
-| Sass (SCSS) | Arquitetura modular com design tokens                       |
-| JavaScript  | Arquitetura modular baseada em módulos nativos (ES Modules) |
+| Tecnologia  | Uso                                                   |
+| ----------- | ----------------------------------------------------- |
+| Vite        | Servidor local (HMR) e build de produção automatizado |
+| HTML5       | Template base com meta tags de SEO, OG e PWA          |
+| Sass (SCSS) | Arquitetura de estilização modular                    |
+| JavaScript  | Lógica frontend modular                               |
 
-## Estrutura do projeto
+## Estrutura do Projeto
 
 ```
 axis/
@@ -89,7 +110,7 @@ axis/
 
 O AXIS organiza o Sass em **cinco camadas** com responsabilidades claras, seguindo os princípios do ITCSS:
 
-**1. Abstracts** — Nada aqui gera CSS diretamente. É a base inteira do sistema.
+**1. Abstracts** — Nada aqui gera CSS diretamente. É a fundação inteira do sistema.
 
 - **`tokens/`** — 9 arquivos de design tokens com valores genéricos, padronizados e escaláveis: colors, spacing, typography, breakpoints, motion, elevation, layers, radius e opacity
 - **`functions/`** — acesso tipado a tokens via `bp()` e `z()`, e helpers de cor com `color.scale()`
@@ -120,7 +141,7 @@ O AXIS organiza o Sass em **cinco camadas** com responsabilidades claras, seguin
 
 | Arquivo             | O que define                                                                                          |
 | ------------------- | ----------------------------------------------------------------------------------------------------- |
-| `_colors.scss`      | Escala de cinzas (white → black) + 4 cores funcionais (green, yellow, red, blue)                      |
+| `_colors.scss`      | Escala de cinza (branco → preto) + 4 cores funcionais (verde, amarelo, vermelho, azul)                |
 | `_spacing.scss`     | Escala macro 8pt (layout) + escala micro (UI controls) + tokens semânticos `$gutter` e `$section-pad` |
 | `_typography.scss`  | 18 tamanhos (Major Third + UI), pesos, line-heights e letter-spacings                                 |
 | `_breakpoints.scss` | 7 breakpoints desktop-first: xxl, xl, lg, md, sm, xs, xxs                                             |
@@ -271,11 +292,11 @@ npm run dev
 
 O Vite inicia um servidor local com HMR. Qualquer alteração em arquivos `.scss` ou `.js` é refletida instantaneamente no browser — sem compilação manual necessária.
 
-### 4. Comece a construir
+### 4. Comece a desenvolver
 
-Adicione suas seções em `src/sass/sections/` e registre-as no `sections/_index.scss`. Defina seus tokens semânticos nas partials onde forem usados e utilize as classes de layout e componentes do AXIS como base.
+Adicione suas seções em `src/sass/sections/` e registre-as no `sections/_index.scss`. Defina seus tokens semânticos nos partials onde eles serão consumidos e utilize as classes utilitárias e os componentes base do AXIS como fundação do layout.
 
-### 5. Gere o build de produção
+### 5. Faça o build de produção
 
 ```bash
 npm run build
@@ -283,15 +304,16 @@ npm run build
 
 O Vite compila, prefixa e minifica todo o CSS e JavaScript automaticamente. O resultado otimizado fica na pasta `dist/`, pronto para o deploy.
 
-## Começando um novo projeto com o AXIS
+## Iniciando um novo projeto com o AXIS
 
-Ao clonar o AXIS para um novo projeto, o fluxo recomendado é:
+Ao clonar o AXIS para um novo projeto, o fluxo de trabalho recomendado é:
 
-1. **Atualize o `index.html`** — substitua os placeholders de SEO, OG e Twitter Card com os dados reais do projeto
-2. **Defina sua identidade visual** — atualize o `public/manifest.json` com nome, cor de tema e ícones do projeto
-3. **Configure seus tokens semânticos** — adicione as variáveis de cor semânticas em `_colors.scss` e ajuste os valores de tipografia em `_typography.scss` conforme a fonte escolhida
-4. **Estilize header e footer** — as partials `sections/_header.scss` e `sections/_footer.scss` estão vazias e prontas para o seu projeto
-5. **Crie suas seções** — adicione novas partials em `sections/` e registre-as no `sections/_index.scss`
+1. **Atualize o `index.html` e o `manifest.json`**
+2. **Configure a identidade visual (Cores, Fontes)**
+3. **Defina os design tokens semânticos**
+4. **Personalize as seções (header, footer)**
+5. **Construa seus novos componentes**
+6. **Escale com confiança**
 
 ## Otimização para produção
 
@@ -305,7 +327,7 @@ Para projetos onde o tamanho final do bundle é crítico, considere usar o **Pur
 
 Contribuições são bem-vindas. Veja [CONTRIBUTING.md](./CONTRIBUTING.md) para saber como abrir issues e propor melhorias.
 
-Se o AXIS foi útil no seu projeto, considere apoiar o desenvolvimento:
+Se o AXIS ajudou você ou acelerou o seu projeto, considere apoiar seu desenvolvimento:
 
 ☕ [Buy Me a Coffee](https://buymeacoffee.com/lucascode)
 
@@ -313,7 +335,7 @@ Se o AXIS foi útil no seu projeto, considere apoiar o desenvolvimento:
 
 MIT License — © 2026 Lucas Couto
 
-Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+Consulte o arquivo [LICENSE](./LICENSE) para mais detalhes.
 
 ## Autor
 

@@ -4,7 +4,7 @@
 
 # AXIS
 
-**A modern Sass architecture and starter foundation for scalable, maintainable web projects**
+**A modern frontend foundation built for scalable, maintainable and organized web projects**
 
 _Structure your frontend. Focus on building, not configuring_
 
@@ -16,27 +16,48 @@ _Structure your frontend. Focus on building, not configuring_
 
 ## What is AXIS?
 
-AXIS is a modern Sass-based architecture powered by Vite, designed to structure frontend projects in a clear, scalable, and maintainable way.
+AXIS is a modular frontend foundation powered by Vite, Sass and modern JavaScript.
 
-It combines the simplicity of traditional development (HTML, Sass and JavaScript) with the power of modern build tooling. Vite delivers an instant development server with HMR and an automated production pipeline that compiles, prefixes and minifies everything for you. Clone it, install dependencies, define your semantic tokens, and start building on a solid base: normalized reset, configured typography, a functional layout system, neutral components ready for your visual identity, and utilities that accelerate development — so the focus stays on what matters: building the interface.
+It was designed to help developers start projects faster with a clean, scalable and production-ready structure — without enforcing visual decisions or framework-specific patterns.
+
+AXIS is not a framework.
+
+It’s a flexible architectural starting point focused on:
+
+- organization
+- maintainability
+- scalability
+- developer experience
+
+Clone the project, define your design tokens, structure your sections and start building immediately.
+
+## Features
+
+- Modular Sass architecture
+- Design token system
+- Vite-powered workflow
+- Native ES Modules structure
+- Neutral reusable components
+- Responsive layout utilities
+- SEO & Open Graph starter template
+- Production-ready build pipeline
+- Scalable folder organization
+- Motion-ready structure
+- Fully customizable foundation
 
 ## Philosophy
 
-AXIS is built around six core principles:
+AXIS was built around a simple principle:
 
-**Modern and agile development** — Vite drives the entire development experience, eliminating complex configuration and focusing on speed. Node.js and NPM make the project scalable and enable professional integration of external libraries.
+> frontend foundations should accelerate development — not dictate design.
 
-**Architectural simplicity** — The folder structure is direct and predictable. Each layer — both in Sass and in JavaScript — has a single, clear responsibility. JavaScript follows the ES Modules pattern, keeping logic organized in isolated, clean files.
+The project focuses on providing:
 
-**Modular Sass architecture** — Five clearly separated layers that communicate through `@use` and `@forward`, creating a logical style hierarchy: Abstracts → Base → Layout → Components → Sections. Everything is processed in-memory during development for maximum performance.
+- structure instead of opinionated UI
+- organization instead of abstraction overload
+- flexibility instead of rigid systems
 
-**Token-driven design** — All visual values come from tokens. Primitive tokens are centralized in `abstracts/tokens/` and globally accessible via `@use`. Semantic tokens are defined locally in the partial where they are consumed — eliminating unnecessary file navigation and keeping values close to where they are used.
-
-> E.g.: semantic tokens in `base/_typography.scss` for typography, in `abstracts/tokens/_spacing.scss` for layout configuration, and inside each component partial for its own padding, transition and sizing values.
-
-**Desktop-first workflow** — The architecture starts from the largest layout and adapts downward via `@include respond()`. Full support for `respond-up()` is included for progressive enhancement when needed.
-
-**Automation and performance** — The entire compilation, prefixing and minification pipeline (CSS and JS) is automated by Vite. No third-party extensions or manual steps needed. `index.html` ships pre-configured with SEO and Open Graph meta tags, and an efficient favicon strategy (`.ico` at root for crawler compatibility, modern formats in `public/assets/favicon/`). Every folder and file in AXIS includes documentation, tips and comments guiding frontend best practices.
+Every layer has a clear responsibility. Every file exists to simplify scalability and long-term maintenance.
 
 ## Stack
 
@@ -44,8 +65,8 @@ AXIS is built around six core principles:
 | ----------- | ----------------------------------------------- |
 | Vite        | Dev server (HMR) and automated production build |
 | HTML5       | Base template with SEO, OG and PWA meta tags    |
-| Sass (SCSS) | Modular architecture with design tokens         |
-| JavaScript  | Modular architecture based on native ES Modules |
+| Sass (SCSS) | Modular styling architecture                    |
+| JavaScript  | Modular frontend logic                          |
 
 ## Project Structure
 
@@ -287,11 +308,12 @@ Vite compiles, prefixes and minifies all CSS and JavaScript automatically. The o
 
 When cloning AXIS for a new project, the recommended workflow is:
 
-1. **Update `index.html`** — replace SEO, OG and Twitter Card placeholders with real project data
-2. **Define your visual identity** — update `public/manifest.json` with the project name, theme color and icons
-3. **Configure your semantic tokens** — add semantic color variables to `_colors.scss` and adjust typography values in `_typography.scss` for the chosen typeface
-4. **Style header and footer** — `sections/_header.scss` and `sections/_footer.scss` are empty and ready for the project
-5. **Create your sections** — add new partials in `sections/` and register them in `sections/_index.scss`
+1. **Update `index.html` and `manifest.json`**
+2. **Configure your visual identity**
+3. **Define semantic design tokens**
+4. **Customize sections**
+5. **Build your components**
+6. **Scale confidently**
 
 ## Production Optimization
 
@@ -317,6 +339,6 @@ See the [LICENSE](./LICENSE) file for details.
 
 ## Author
 
-Built with lots of code and coffee by [Lucas Couto](https://linkedin.com/in/lucas-coutoti).
+Developed by [Lucas Couto](https://linkedin.com/in/lucas-coutoti).
 
 See my work or get in touch at [Lucas Code](https://bio.site/lucascode).
