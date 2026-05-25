@@ -9,6 +9,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   // Root of the project — where index.html lives
+  base: "./",
   root: ".",
 
   // Static assets served as-is (copied to dist/ on build)
