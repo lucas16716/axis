@@ -81,7 +81,8 @@ axis/
 │   │   │   └── video/           → Videos (.webm, .mp4)
 │   │   └── svg/                 → Vectors, icons, and illustrations
 │   ├── favicon.ico              → Legacy icon (root level for bot compatibility)
-│   └── manifest.json            → PWA settings and browser icons
+│   ├── manifest.json            → PWA settings and browser icons
+│   └── README-manifest.md       → PWA manifest documentation and setup guide
 ├── src/
 │   ├── js/
 │   │   ├── base/                → Global scripts and utility functions
@@ -176,7 +177,7 @@ AXIS organizes Sass into **five layers** with clear responsibilities, following 
 </div>
 ```
 
-Available modifiers: `flex-col`, `flex-wrap`, `justify-start`, `justify-center`, `justify-between`, `justify-end`, `items-stretch`, `items-center`, `items-start`, `items-end`.
+Available modifiers: `flex-col`, `flex-wrap`, `justify-start`, `justify-center`, `justify-between`, `justify-end`, `items-stretch`, `items-center`, `items-start`, `items-end`, `items-baseline`.
 
 ### Grid
 

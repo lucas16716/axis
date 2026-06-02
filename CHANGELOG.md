@@ -27,7 +27,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and 
 - **Static CSS**: Removed the `src/css/` directory (styles are now processed dynamically in development).
 - **Manual Minification**: Removed the `dist/script.min.js` placeholder (now handled automatically by the build pipeline).
 
-## [1.0.0] — 2026/03/10
+## [1.0.0] — 2026-03-10
 
 Initial release.
 

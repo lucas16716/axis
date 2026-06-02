@@ -81,7 +81,8 @@ axis/
 │   │   │   └── video/           → Vídeos (.webm, .mp4)
 │   │   └── svg/                 → Vetores, ícones e ilustrações
 │   ├── favicon.ico              → Ícone legacy (na raiz para melhor compatibilidade)
-│   └── manifest.json            → Configurações de PWA e ícones para o navegador
+│   ├── manifest.json            → Configurações de PWA e ícones para o navegador
+│   └── README-manifest.md       → Documentação e guia de configuração do PWA Manifest
 ├── src/
 │   ├── js/
 │   │   ├── base/                → Scripts globais e funções utilitárias
@@ -176,7 +177,7 @@ O AXIS organiza o Sass em **cinco camadas** com responsabilidades claras, seguin
 </div>
 ```
 
-Modificadores disponíveis: `flex-col`, `flex-wrap`, `justify-start`, `justify-center`, `justify-between`, `justify-end`, `items-stretch`, `items-center`, `items-start`, `items-end`.
+Modificadores disponíveis: `flex-col`, `flex-wrap`, `justify-start`, `justify-center`, `justify-between`, `justify-end`, `items-stretch`, `items-center`, `items-start`, `items-end`,`items-baseline`.
 
 ### Grid
 

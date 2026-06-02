@@ -1,7 +1,30 @@
+@use "../abstracts/mixins" as mix;
+
 // ===================================================
 // AXIS — GLOBAL BASE STYLES
 // Element-level normalization
 // ===================================================
+
+* {
+  // Accessibility: Reliable focus indicator for keyboard navigation
+  &:focus-visible { @include mix.focus-ring(); }
+  &:focus:not(:focus-visible) { outline: none; } 
+}
+
+// Accessibility: Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
 
 img, picture, video, canvas, svg {
   display: block;
@@ -15,13 +38,3 @@ button, input, textarea, select, a {
 }
 
 ul, ol { list-style: none; }
-
-// Accessibility: Reduced Motion
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
