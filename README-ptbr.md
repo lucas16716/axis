@@ -272,10 +272,12 @@ Use os mixins diretamente nas suas partials de seção ou componente:
 
 ## Como usar o AXIS?
 
-### 1. Clone o repositório
+### 1. Crie seu repositório a partir do Template
+
+O AXIS é um repositório modelo. No GitHub, clique no botão verde **Use this template > Create a new repository** para gerar um novo projeto limpo. Em seguida, clone o seu novo repositório:
 
 ```bash
-git clone https://github.com/lucas16716/axis.git nome-do-seu-projeto
+git clone https://github.com/SEU-USUARIO/nome-do-seu-projeto.git
 cd nome-do-seu-projeto
 ```
 
@@ -295,7 +297,7 @@ O Vite inicia um servidor local com HMR. Qualquer alteração em arquivos `.scss
 
 ### 4. Comece a desenvolver
 
-Adicione suas seções em `src/sass/sections/` e registre-as no `sections/_index.scss`. Defina seus tokens semânticos nos partials onde eles serão consumidos e utilize as classes utilitárias e os componentes base do AXIS como fundação do layout.
+Aplique as configurações iniciais do seu projeto, adicione suas seções em `src/sass/sections/` e registre-as no `sections/_index.scss`. Defina seus tokens semânticos nos partials onde eles serão consumidos e utilize as classes utilitárias e os componentes base do AXIS como fundação do layout.
 
 ### 5. Faça o build de produção
 
@@ -307,14 +309,33 @@ O Vite compila, prefixa e minifica todo o CSS e JavaScript automaticamente. O re
 
 ## Iniciando um novo projeto com o AXIS
 
-Ao clonar o AXIS para um novo projeto, o fluxo de trabalho recomendado é:
+Ao utilizar o AXIS como ponto de partida para um novo projeto, siga este fluxo de trabalho para configurar sua base de forma limpa e organizada:
 
-1. **Atualize o `index.html` e o `manifest.json`**
-2. **Configure a identidade visual (Cores, Fontes)**
-3. **Defina os design tokens semânticos**
-4. **Personalize as seções (header, footer)**
-5. **Construa seus novos componentes**
-6. **Escale com confiança**
+1. **Atualize as Configurações e Metadados**
+
+   Antes de codificar, ajuste a identidade do novo projeto nos arquivos do ecossistema:
+
+- `package.json`: Altere todos os campos até "homepage" com as informações específicas do seu projeto.
+- `index.html`: Atualize todos os dados da tag `<head>` com as metatags corretas.
+- `public/manifest.json`: Ajuste as chaves `name`, `short_name`, `theme_color`, `background_color` e os caminhos dos ícones para o PWA.
+
+2. **Configure a identidade visual (Design Tokens)**
+
+   Vá até a camada de fundação do SASS e configure as diretrizes visuais:
+
+- Paleta de Cores: Defina os tokens de cores primárias, secundárias e os tons complementares.
+- Tipografia: Importe as fontes necessárias e ajuste as variáveis de escala, pesos e famílias tipográficas.
+- Grid e Espaçamentos: Ajuste as funções de dimensionamento e as variáveis de container caso o novo design exija.
+
+3. **Personalize o Layout e Estrutura de Seções**
+
+- Layout Global: Atualize as marcações e estilos do `header` e do `footer` globais.
+- Componentes Reutilizáveis: Crie ou adapte blocos atômicos dentro de `src/sass/components/`.
+- Seções Isoladas: Construa os blocos únicos da página em `src/sass/sections/` e registre-os explicitamente no `sections/_index.scss`.
+
+4. **Codifique com Confiança**
+
+   Com as dependências limpas, variáveis injetadas e o servidor do Vite rodando redondo em segundo plano, sua fundação técnica está blindada para iniciar o desenvolvimento.
 
 ## Otimização para produção
 
