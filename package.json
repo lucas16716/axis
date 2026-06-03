@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Structured Sass foundation for scalable frontend projects — ready to clone and build.",
   "author": "Lucas Couto",
+  "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
