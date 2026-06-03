@@ -272,10 +272,12 @@ Use mixins directly in your section or component partials:
 
 ## Getting Started
 
-### 1. Clone the repository
+### 1. Create your repository from the Template
+
+AXIS is a template repository. On GitHub, click the green **Use this template > Create a new repository** button to generate a clean new project. Then, clone your new repository:
 
 ```bash
-git clone https://github.com/lucas16716/axis.git your-project-name
+git clone https://github.com/YOUR-USERNAME/your-project-name.git
 cd your-project-name
 ```
 
@@ -293,7 +295,7 @@ npm run dev
 
 Vite starts a local dev server with HMR. Any change to `.scss` or `.js` files is reflected instantly in the browser — no manual compilation needed.
 
-### 4. Start building
+### 4. Start developing
 
 Add sections in `src/sass/sections/` and register them in `sections/_index.scss`. Define semantic tokens in the partials where they are consumed and use AXIS layout classes and components as the foundation.
 
@@ -307,14 +309,33 @@ Vite compiles, prefixes and minifies all CSS and JavaScript automatically. The o
 
 ## Starting a New Project with AXIS
 
-When cloning AXIS for a new project, the recommended workflow is:
+When using AXIS as a starting point for a new project, follow this workflow to configure your base in a clean and organized way:
 
-1. **Update `index.html` and `manifest.json`**
-2. **Configure your visual identity**
-3. **Define semantic design tokens**
-4. **Customize sections**
-5. **Build your components**
-6. **Scale confidently**
+1. **Update Configurations and Metadata**
+
+   Before coding, adjust the identity of the new project in the ecosystem files:
+
+- `package.json`: Change all fields up to "homepage" with the specific information of your project.
+- `index.html`: Update all data in the `<head>` tag with the correct metatags.
+- `public/manifest.json`: Adjust the `name`, `short_name`, `theme_color`, `background_color` keys, and the icon paths for the PWA.
+
+2. **Configure the visual identity (Design Tokens)**
+
+   Go to the SASS foundation layer and configure the visual guidelines:
+
+- Color Palette: Define the tokens for primary and secondary colors, and complementary shades.
+- Typography: Import the necessary fonts and adjust the scale variables, weights, and font families.
+- Grid and Spacing: Adjust the sizing functions and container variables if the new design requires it.
+
+3. **Customize the Layout and Section Structure**
+
+- Global Layout: Update the markup and styles of the global `header` and `footer`.
+- Reusable Components: Create or adapt atomic blocks within `src/sass/components/`.
+- Isolated Sections: Build the unique page blocks in `src/sass/sections/` and explicitly register them in `sections/_index.scss`.
+
+4. **Code with Confidence**
+
+   With clean dependencies, injected variables, and the Vite server running smoothly in the background, your technical foundation is bulletproof to start development.
 
 ## Production Optimization
 
